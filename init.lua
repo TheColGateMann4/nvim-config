@@ -43,6 +43,17 @@ cmp.setup({
 	["<leader>["] = cmp.mapping.complete(),
     	["<leader>]"] = cmp.mapping.confirm({ select = true }),
       }),
+sources = cmp.config.sources({
+    { 
+      name = "nvim_lsp",
+      entry_filter = function(entry)
+           return not entry:get_completion_item().label:match("^•") and not entry:get_completion_item().deprecated
+      end,
+    },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "nvim_lua" },
+  }),
   window = {
       completion = cmp.config.window.bordered({
       side_padding = 1,
