@@ -3,6 +3,7 @@ return {
 	opts = {},
 	lazy = false,
 	opts = {
+		default_file_explorer = true,
 		columns = {
 			"icon",
 			"permissions",

@@ -7,7 +7,7 @@ return {
 		local harpoon = require("harpoon")
 		harpoon.setup({
 			global_settings = {
-				save_on_toggle = false,
+				save_on_toggle = true,
 				save_on_change = true,
 				excluded_filetypes = { "harpoon" },
 			},

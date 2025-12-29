@@ -2,10 +2,11 @@ return {
 	"TimUntersberger/neogit",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"sindrets/diffview.nvim",
+		{ "sindrets/diffview.nvim", lazy = false },
 
 		"nvim-telescope/telescope.nvim",
 	},
+	lazy = false,
 	cmd = "Neogit",
 	keys = {
 		{ "<M-g>", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
