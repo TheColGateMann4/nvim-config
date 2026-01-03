@@ -5,7 +5,7 @@ if vim.startswith(targetPath, "oil://") then
 end
 
 if targetPath == nil or targetPath == "" then
-	vim.notify("targetPath is nil or empty", vim.log.levels.ERROR)
+	targetPath = vim.loop.cwd()
 end
 
 vim.cmd.cd(targetPath)
