@@ -1,6 +1,6 @@
 -- executing all files in /lua dir recursivly
 local executeInFolder = function(path) 
-	local config_path = vim.fn.stdpath("config") .. "\\lua\\"
+	local config_path = vim.fn.stdpath("config") .. "/lua/"
 	local scan = vim.fn.globpath(config_path .. path, "*.lua", false, true)
 
 	for _, file in ipairs(scan) do
