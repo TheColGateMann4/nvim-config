@@ -1,7 +1,15 @@
 @echo off
+setlocal
+
 if "%~1"=="" (
-	start "" "C:\Program Files\Neovide\neovide.exe" --maximized "%CD%"
+    for /f "usebackq delims=" %%p in (`wsl wslpath "%CD%"`) do (
+        start "" "C:\Program Files\Neovide\neovide.exe" --maximized --wsl -- "%%p"
+    )
 ) else (
-	start "" "C:\Program Files\Neovide\neovide.exe" --maximized "%*"
+    for /f "usebackq delims=" %%p in (`wsl wslpath "%*"` ) do (
+        start "" "C:\Program Files\Neovide\neovide.exe" --maximized --wsl -- "%%p"
+    )
 )
+
+endlocal
 exit /b
