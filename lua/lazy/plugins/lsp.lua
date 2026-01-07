@@ -8,8 +8,11 @@ return
 
 			cmp.setup({
 				mapping = cmp.mapping.preset.insert({
-					["<leader>["] = cmp.mapping.complete(),
-					["<leader>]"] = cmp.mapping.confirm({ select = true }),
+					["<C-n>"] = cmp.mapping.select_next_item(),    -- next item
+					["<C-p>"] = cmp.mapping.select_prev_item(),    -- previous item
+					["<C-Space>"] = cmp.mapping.complete(),        -- trigger completion
+					["<CR>"] = cmp.mapping.confirm({ select = true }), -- confirm selection
+					["<C-e>"] = cmp.mapping.abort(),               -- cancel completion
 				}),
 				sources = cmp.config.sources({
 					{ 
@@ -58,7 +61,7 @@ return
 				}
 			)
 
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+			vim.keymap.set("n", "gd", vim.lsp.buf.declaration)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references)
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 
