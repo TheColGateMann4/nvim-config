@@ -2,9 +2,10 @@ return
 {
 	'nvim-treesitter/nvim-treesitter',
 	lazy = false,
-	build = ':TSUpdate'
+	build = ':TSUpdate',
 	config = function()
-            require('nvim-treesitter.configs').setup({
+            require('nvim-treesitter.config').setup({
+		ensure_installed = "all",
                 highlight = { enable = true },
                 indent = { enable = true },
                 incremental_selection = {
@@ -61,10 +62,19 @@ return
                 },
             })
         end,
+<<<<<<< HEAD
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
             'nvim-treesitter/nvim-treesitter-refactor',
             'nvim-treesitter/playground',
             'nvim-treesitter/nvim-treesitter-context',
         },
+=======
+        -- dependencies = {
+        --     'nvim-treesitter/nvim-treesitter-textobjects',
+        --     'nvim-treesitter/nvim-treesitter-refactor',
+        --     'nvim-treesitter/playground',
+        --     'nvim-treesitter/nvim-treesitter-context',
+        -- },
+>>>>>>> 98d796c (local)
 }
