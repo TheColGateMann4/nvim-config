@@ -1,4 +1,4 @@
-local targetPath = vim.fn.fnameescape(vim.fn.argv(0))
+local targetPath = vim.fn.fnamemodify(vim.fn.argv(0), ":p:h")
 
 if vim.startswith(targetPath, "oil://") then 
 	targetPath = require("oil").get_current_dir()
@@ -8,4 +8,7 @@ if targetPath == nil or targetPath == "" then
 	targetPath = vim.loop.cwd()
 end
 
-vim.cmd.cd(targetPath)
+print(vim.fn.expand(targetPath))
+print(targetPath)
+
+vim.cmd.cd(vim.fn.expand(targetPath))
