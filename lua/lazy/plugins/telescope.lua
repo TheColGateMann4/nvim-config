@@ -14,6 +14,25 @@ return
 					layout_strategy = "horizontal",
 				})
 			end)
+
+			vim.keymap.set("n", "<C-l>", function()
+				require("telescope.builtin").live_grep({
+					cwd = vim.fn.getcwd(),
+					additional_args = function()
+						return { "--hidden", "--glob", "!.git/*" }
+					end,
+					layout_strategy = "horizontal",
+				})
+			end)
+			vim.keymap.set("n", "<C-f>", function()
+				require("telescope.builtin").live_grep({
+					cwd = vim.fn.expand("%:p:h"),
+					additional_args = function()
+						return { "--hidden", "--glob", "!.git/*" }
+					end,
+					layout_strategy = "horizontal",
+				})
+			end)
 		end,
 	},
 }

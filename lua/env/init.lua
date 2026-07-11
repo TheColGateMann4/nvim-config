@@ -1,6 +1,7 @@
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 
+vim.o.number = true
 vim.o.relativenumber = true
 vim.o.updatetime = 150
 
